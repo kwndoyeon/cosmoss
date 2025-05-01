@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>COSMOS</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+		<style type="text/css">
+		html {font-family: "Noto Sans KR", sans-serif;font-optical-sizing: auto;font-weight: 500;font-style: normal;line-height: 1.6;word-break: keep-all;overscroll-behavior-y: none;overflow-x: hidden;}
+		body, h1, h2, h3, p, ol, ul{margin: 0;padding: 0}
+		body {overflow-x: hidden;}
+		h2{font-weight: 780;font-size: 4rem;padding-top: 60px;padding-bottom: 60px}
+		p{font-size: 1.8rem;font-weight: 600;padding-top: 20px;padding-bottom: 20px;}
+		ul {list-style: none;}
+		ul li a {text-decoration: none;display: block;padding: 0px;color: white;}
+		ul li a:hover{color: #04FBF7;transition: all 1s}
+		footer{padding-top: 10px;padding-bottom: 30px}
+		section{padding-top: 100px;padding-bottom: 100px;}
+
+		.right-text{text-align: right;}
+		.center-text{text-align: center;}
+		.right-spacing{padding-right: 150px;}
+		.center-spacing{padding-left: 100px;padding-right: 100px;text-align: center}
+		.wrap{width:900px; margin:auto;position: relative;}
+
+
+		.nav-wrapper {padding:30%;display: flex;justify-content: center;padding-top: 30px;position: absolute;z-index: 3;}
+		.blur{background: rgba(255, 255, 255, 0.15);backdrop-filter: blur(12px);-webkit-backdrop-filter: blur(12px); border-radius: 30px;padding: 0.2rem 2rem;max-width: 600px;width: 100%;margin: 0 auto;}
+		.normal{width:1000px; margin:auto;max-width: 600px;display: flex;justify-content: space-between;align-items: center;}
+		.flex{display: flex;justify-content:space-between;align-items: center;gap: 50px;margin-right: 3px;}
+		.logo{font-family: "Special Gothic Expanded One", sans-serif;font-weight: 400;font-style: normal;font-size: 1rem;margin-left: 4px;cursor: pointer;}
+
+		.black{background: black;height: 180vh; /* 또는 더 길게: height: 1200px; */
+  position: relative;}
+
+
+  		.img-wrapper {display: inline-block;text-decoration: none;}
+
+		.ro1{transform: perspective(400px) rotateY(35deg) ; transform-origin: center;transition: 0.3s ease;width: 300px;position: absolute;}
+		.ro2 {transform: perspective(400px) rotateY(-35deg);transform-origin: center;transition: 0.3s ease;width: 300px;position: absolute;}
+		.ro3{transform: perspective(400px) rotateX(35deg) ; transform-origin: center;transition: 0.3s ease;width: 300px;position: absolute;}
+		.ro4{transform: perspective(400px) rotateX(-35deg) ; transform-origin: center;transition: 0.3s ease;width: 300px;position: absolute;}
+		.card-group {position: relative;top: 400px;}
+
+		.card-group.rotating {animation: spinAndScale 6s linear infinite;transform-style: preserve-3d;transform-origin: center center;}
+
+		.img-hover-box {position: relative;}
+
+		.img-hover-box img {position: absolute;top: 0;left: 0;width: 100%;transition: opacity 0.3s ease-in-out;}
+
+		.img-hover {opacity: 0;}
+
+		.img-hover-box:hover .img-hover {opacity: 1;}
+
+		.img-hover-box:hover .img-default {opacity: 0;}
+
+
+		.click {font-family: "Special Gothic Expanded One", sans-serif;font-weight: 100;font-style: normal;}
+
+		.foot-wrap {width: 900px; margin:auto;position: relative;margin-bottom: 0}
+		.foot-h2{font-family: "Special Gothic Expanded One", sans-serif;font-weight: 400;font-style: normal;font-size:4rem;line-height: 1.25;}
+		.foot-p-1{font-family: "Special Gothic Expanded One", sans-serif;font-weight: 400;font-style: normal;font-size:0.9rem;line-height: 1.25;padding-left: 470px;text-align: left;position: absolute;top: 40px}
+		.foot-p-2{font-family: "Special Gothic Expanded One", sans-serif;font-weight: 400;font-style: normal;font-size:0.9rem;line-height: 1.25;padding-left: 660px;text-align: left;;text-align: left;position: absolute;top: 40px}
+		.foot-p-3{font-family: "Special Gothic Expanded One", sans-serif;font-weight: 400;font-style: normal;font-size:0.9rem;line-height: 1.25;padding-left: 660px;text-align: left;text-align: left;position: absolute;top: 125px}
+		.foot-f{font-family: "Special Gothic Expanded One", sans-serif;font-weight: 100;font-style: normal;font-size:0.7rem;line-height: 1.25;padding-left: 470px;text-align: left;text-align: left;position: absolute;top: 315px}
+		
+		.slider {width: 100%;overflow: hidden;position: relative;padding-top: 100px}
+		.slide-track {display: flex;width: calc(250px * 8);animation: scroll 8s linear infinite;}
+		.slide {width: 300px;flex-shrink: 0;margin-right: 30px;}	
+
+		.f{font-family: "Special Gothic Expanded One", sans-serif;font-weight: 400;font-style: normal;font-size:3em;line-height: 1.25}	
+
+		
+		.img-box {position: relative; width: 200px;height: auto;}
+		.img-box img {width: 100%;display: block;position: absolute;top: 0;left: 0;transition: opacity 0.4s ease;}
+	
+		.img-hover {opacity: 0;z-index: 2;}
+		.img-default {
+  opacity: 1;
+  z-index: 1;
+}
+	
+
+
+		.blinking {animation: blink 0.5s ease-in-out infinite;}
+
+
+		.msg {display: flex;flex-direction: column;align-items: flex-end;gap: 0rem;scale: 0.8;transform-origin: left top;padding-left: 150px;opacity: 0;transform: translateY(30px)}
+
+		.msg img {align-self: flex-start;transform: scale(0.85);transform-origin: left top;}
+
+		.question {opacity: 0;transition: opacity 0.5s ease;}
+
+
+		.gif-section {width: 100%; height: 50vh;background-image: url("29-gif.gif");background-size:cover;background-position: center;background-attachment: fixed;}
+
+
+
+		@keyframes scroll {0% { transform: translateX(0); }100% { transform: translateX(-50%); }}
+
+		@keyframes spinAndScale {0% {transform: rotateZ(0deg) scale(1.2);}25% {transform: rotateZ(90deg) scale(0.5);}50% {transform: rotateZ(180deg) scale(1);}75% {transform: rotateZ(270deg) scale(0.5);}100% {transform: rotateZ(360deg) scale(1.2);}}
+
+
+		@keyframes blink {0%, 100% {opacity: 1;}50% {opacity: 0;}}
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+
+
+
+
+
+
+<body>
+	<div class="nav-wrapper" style="position: fixed ;">
+		<nav class= "blur">
+			<div class="normal flex">
+				<div class="logo">
+					<h1 style="color: white;"> COSMOS </h1>
+				</div>
+				<ul class="flex">
+					<li><a href="index.html">about</a></li>
+					<li><a href=""target="self">service</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+<section class="black">
+	<h2 class="center-spacing" style="color: white;padding-top: 150px;">원하는 행성을 <br> 마음껏 골라보세요</h2>
+	<div class="card-group rotating">
+	<img src="17-image.png" style="position:relative;left: 380px;top:90px;" class="ro1">
+	<img src="18-image.png" style="position:relative;left: 740px;top:100px" class="ro2">
+	<img src="9-image.png" style="position:relative;left: 100px; top: 300px;scale: 1.6;" class="ro3">
+	<img src="16-image.png" style="position:relative;left: -200px;top:-360px;scale: 1.6" class="ro4">
+</div>
+</section>
+
+<section class="black" style="height: 90vh">
+	<div class="wrap">
+	<h2 style="color: white;margin-top: -100px;"> 탈출 전 필요한 변명부터</h2>
+	<img src="21-image.png" class="question" style="width:1000px;padding-top: 80px; scale: 0.7;padding-bottom: 40px;padding-left: 150px;" />
+	<img src="22-image.png" class="msg msg1" style="margin-bottom: -20px;" />
+	<img src="23-image.png" class="msg msg2" style="margin-bottom:px" />
+	<img src="24-image.png" class="msg msg3" />
+	</div>
+</section>
+
+<section class="black">
+	<div class="img-hover-box">
+		<img src="11-image.png" style="padding-top: 50px;" class="img-default">
+		<img src="20-image.png" style="padding-top: 50px;" class="img-hover">
+	</div>
+	<div class="wrap">
+	<h2 style="color: white;position: relative;left: 510px;top:190px;z-index: 3;" > 우주용 언어까지 </h2>
+	</div>
+</section>
+
+<section class="black" style="height:80vh">
+	<div class="wrap">
+		<h2 style="color: white;position: absolute;top: -300px;text-align: center;font-size: 3.5rem;" class="center-spacing"> 우주에서 외로울 분들을 위한 <br>외계 룸메이트도! </h2> </div>
+	<div class="slider" style="padding-top:150px">
+  	<div class="slide-track">
+    	<img src="19-image.png" class="slide" />
+    	<img src="25-image.png" class="slide" />
+    	<img src="26-image.png" class="slide" />
+    	<img src="27-image.png" class="slide" />
+    	<img src="19-image.png" class="slide" />
+    	<img src="25-image.png" class="slide" />
+    	<img src="26-image.png" class="slide" />
+    	<img src="27-image.png" class="slide" />
+    	<img src="19-image.png" class="slide" />
+    	<img src="25-image.png" class="slide" />
+    	<img src="26-image.png" class="slide" />
+    	<img src="27-image.png" class="slide" />
+  	</div>
+	</div>
+</section>
+
+<section class="gif-section"style="height: 45vh;">
+	<div class="wrap">
+	<p style="color:#04FBF7; padding-bottom:50px" class="center-spacing f"> IT'S TIME TO  </p>
+	<div style="text-align: center;">
+		<a href="index.html" class="img-wrapper">
+  		<div class="img-box">
+    		<img src="6-image.png" class="img-normal" alt="기본 이미지" style="z-index: 1;">
+    		<img src="7-image.png" class="img-hover" alt="호버 이미지">
+    		<p style="color: #04FBF7;position: relative;top: 50px;z-index: 3;padding-bottom: 150px;"class="f blinking"> EXIT! </p>
+ 		 </div>
+ 	</div>
+</a>
+</section>
+</div>
+</section>
+
+
+
+
+<footer style="background-color: #04FBF7;">
+		<div class="foot-wrap">
+		<h2 class="foot-h2" style="padding-bottom: 40px;padding-top: 40px;a"> GET OUT <br> OF EARTH!</h2>
+		<h2 class="foot-h2" style="background-color:black;color: #FD3002;padding-top: 30px;padding-bottom: 30px;"> COSMOS </h2>
+		<p class="foot-p-1">CONTACT <br>+82 2-349-1021 </p>
+		<p class="foot-p-2">E-MAIL <br> kdy101904k@gmail.com</p>
+		<p class="foot-p-3">ADRESS <br> SeoulTech Davinci Hall</p>
+		<p class="foot-f" style="color: white;">Copyright © 2025 COSMOS.All rights reserved.</p>
+		</div>
+	</footer>	
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<script>
+  const hoverBox = document.querySelector('.img-box');
+  const imgDefault = document.querySelector('.img-default');
+  const imgHover = document.querySelector('.img-hover');
+
+  hoverBox.addEventListener('mouseenter', () => {
+    gsap.to(imgDefault, { opacity: 0, duration: 0.5 });
+    gsap.to(imgHover, { opacity: 1, duration: 0.5 });
+  });
+
+  hoverBox.addEventListener('mouseleave', () => {
+    gsap.to(imgDefault, { opacity: 1, duration: 0.5 });
+    gsap.to(imgHover, { opacity: 0, duration: 0.5 });
+  });
+</script>
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+gsap.fromTo(
+  ".question",
+  { opacity: 0 },
+  {
+    opacity: 1,
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: ".question",
+      start: "top 80%",
+      once: true,
+      onEnter: () => {
+        gsap.to(".msg1", { opacity: 1, y: 0, duration: 0.8, delay: 1 });
+        gsap.to(".msg2", { opacity: 1, y: 0, duration: 0.8, delay: 1.8 });
+        gsap.to(".msg3", { opacity: 1, y: 0, duration: 0.8, delay: 2.6 });
+      }
+    }
+  }
+);
+</script>
+
+
+
+</body>
+
+</html>
